@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[5]:
-
-
 import requests
 from bs4 import BeautifulSoup
 import pandas
@@ -14,10 +8,6 @@ c = r.content
 soup = BeautifulSoup(c,"html.parser")
 
 all=soup.find_all("div",{"class":"infinite-container"})
-
-
-# In[6]:
-
 
 l=[]
 
@@ -65,16 +55,6 @@ for items in all:
             pass
         l.append(d)
 
-
-# In[7]:
-
-
 df=pandas.DataFrame(l)
-df
-
-
-# In[8]:
-
 
 df.to_csv("Current_Realestate.csv")
-
